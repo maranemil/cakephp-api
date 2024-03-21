@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  web-api:
+    container_name: cakephp-api
+    build:
+      context: .
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/var/www/html:rw
+    networks:
+      ec2:
+
+
+volumes:
+  cli-volume:
+    {}
+
+networks:
+  ec2:
+    driver: bridge
