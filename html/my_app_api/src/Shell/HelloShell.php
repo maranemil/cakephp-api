@@ -15,6 +15,8 @@ class HelloShell extends Shell
     {
         // https://book.cakephp.org/3/en/console-and-shells/shells.html
         // https://symfony.com/doc/current/logging/formatter.html
+        // https://packagist.org/packages/monolog/monolog
+
         $this->out('Hello world.');
         $call = new ApiController();
         $call->hello();
