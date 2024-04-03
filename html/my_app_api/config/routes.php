@@ -61,6 +61,10 @@ return function (RouteBuilder $routes): void {
          * ...and connect the rest of 'Pages' controller's URLs.
          */
         $builder->connect('/pages/*', 'Pages::display');
+        $builder->connect('/api/how-are-you', ['controller' => 'Api','action'=>'howAreYou']);
+
+
+
 
         /*
          * Connect catchall routes for all controllers.

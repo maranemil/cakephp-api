@@ -18,7 +18,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # PHP5 Extensions
 RUN docker-php-ext-install curl \
-    && docker-php-ext-install pdo_mysql \
+    # && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install zip \
     && docker-php-ext-install -j$(nproc) intl \

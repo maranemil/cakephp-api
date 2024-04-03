@@ -30,7 +30,7 @@ class ApiController extends AppController
         $this->viewBuilder()->setOption('serialize', ['message']);
     }
 
-    public function howareyou(): void
+    public function howAreYou(): void
     {
         $this->viewBuilder()->setLayout('ajax');
         $this->set('message', "I\'m fine");
