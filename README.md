@@ -57,6 +57,7 @@ xdg-open  http://localhost/my_app_api/index.php/api/whattimeisit/in/london
 docker exec -it cakephp-api sh -c "cd my_app_api && php vendor/bin/codecept run"
 ~~~
 
+### run shell
 ~~~shell
 # cd my_app_api/
 # chmod +x bin/cake
