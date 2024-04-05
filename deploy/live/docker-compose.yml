@@ -4,7 +4,7 @@ services:
   web-api:
     container_name: cakephp-api
     build:
-      context: .
+      context: ../..
     tty: true
     ports:
       - "80:80"

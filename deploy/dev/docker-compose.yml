@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+  web-api:
+    container_name: cakephp-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "8080:80"
+    volumes:
+      - ../../html:/var/www/html:rw
+    networks:
+      ec2:
+    environment:
+      - DEBUG=1
+      - SQLITE_DB=test
+
+
+volumes:
+  cli-volume:
+    {}
+
+networks:
+  ec2:
+    driver: bridge

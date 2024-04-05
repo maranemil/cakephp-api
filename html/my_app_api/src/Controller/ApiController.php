@@ -54,7 +54,7 @@ class ApiController extends AppController
         $this->viewBuilder()->setOption('serialize', ['message']);
     }
 
-    private function getMessage($utc_location)
+    private function getMessage(string $utc_location): string
     {
         list ($hour, $minutes, $meridiem) = $this->calculateTime($utc_location);
         if ($minutes < 10) {
@@ -70,7 +70,7 @@ class ApiController extends AppController
         return $message;
     }
 
-    private function calculateTime($utc_location): array
+    private function calculateTime(string $utc_location): array
     {
         if ($utc_location) {
             $strLocation = 'Europe/' . ucwords($utc_location);
