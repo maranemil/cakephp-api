@@ -1,0 +1,66 @@
+https://phpstan.org/user-guide/getting-started
+
+composer require --dev phpstan/phpstan
+
+vendor/bin/phpstan analyse src tests
+
+.......
+
+https://codeception.com/quickstart
+
+composer require "codeception/codeception" --dev
+php vendor/bin/codecept bootstrap
+php vendor/bin/codecept generate:cest Acceptance First
+php vendor/bin/codecept run --steps
+
+php vendor/bin/codecept init Acceptance
+php vendor/bin/codecept init Api
+php vendor/bin/codecept init Unit
+
+.......
+
+https://book.cakephp.org/migrations/2/en/index.html
+
+composer require cakephp/migrations "@stable"
+bin/cake plugin load Migrations
+
+$this->addPlugin('Migrations'); # add in src/Application.php
+
+config/Migrations
+20160121163850_CreateTestTable.php
+
+.......
+
+https://stackoverflow.com/questions/1021980/how-do-i-connect-cakephp-to-a-sqlite-database
+https://book.cakephp.org/4/en/orm/database-basics.html
+
+
+connect CakePHP to a SQLite database
+
+
+'default' => [
+    'className' => 'Cake\Database\Connection',
+    'driver' => 'Cake\Database\Driver\Sqlite',
+    'persistent' => false,
+    'host' => 'localhost',
+    'port' => '',
+    'login' => '',
+    'password' => '',
+    'database' => 'tmp\cake4.sqlite',
+    'schema' => 'test',
+    'prefix' => '',
+    'encoding' => ''
+],
+
+
+
+use Cake\Datasource\ConnectionManager;
+
+$connection = ConnectionManager::get('default');
+$results = $connection
+    ->selectQuery('*', 'articles')
+    ->execute()
+    ->fetchAll('assoc');
+
+
+
